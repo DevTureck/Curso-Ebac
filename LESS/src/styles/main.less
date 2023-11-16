@@ -7,7 +7,7 @@
     margin-bottom: 8px;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -19,11 +19,19 @@ body {
     color: #colors[textColor];
 }
 
+li {
+    list-style: none;
+}
+
 .container {
     max-width: 960px;
     width: 100%;
     margin: 0 auto;
-    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     @media @breakpointTablet {
         max-width: 80%;
     }
@@ -35,9 +43,9 @@ body {
 }
 
 header {
-    padding: 24px;
+    padding-bottom: 24px;
 
-    .profile-avatar{
+    .profile-avatar {
         display: block;
         margin: 0 auto 24px;
         border-radius: 50%;
@@ -58,7 +66,7 @@ header {
         .marginBottom8();
     }
 
-    &-description{
+    &-description {
         font-size: 14px;
         opacity: 0.7;
     }
@@ -70,15 +78,38 @@ header {
     max-width: 240px;
     width: 100%;
     margin: 0 auto;
-    li {
-        list-style: none;
 
-        img {
-            transition: all ease .3s;
+    img {
+        transition: all ease .3s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+
+.projects-list {
+    margin-top: 32px;
+
+    &-item {
+        a{
+            text-decoration: none;
+            background-color: #colors[buttonColor];
+            display: block;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #colors[textColor];
+            font-weight: bold;
+            border-radius: 30px;
+            border: 2px solid #colors[buttonColor];
+
             &:hover {
-                transform: scale(1.2);
+                color: #colors[buttonColor];
+                background-color: transparent;
+                transition: all ease .5s;
             }
         }
     }
-    
 }
